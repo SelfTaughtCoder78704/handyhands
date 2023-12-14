@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+
+const cards = [
+	{
+		icon: '/icons/tools.svg',
+		title: 'Home Repair and Maintenance',
+		text: 'From fixing a leaky faucet to patching up drywall, our team is equipped to handle a wide range of repair jobs around your house. We understand the importance of keeping your home in top condition. Let us help you maintain your home’s value and comfort!'
+	},
+	{
+		icon: '/icons/wheelchair.svg',
+		title: 'Safety & Mobility/Aging in Place',
+		text: 'We specialize in home modifications that enhance safety and accessibility. Whether you need grab bars, ramp installation, or a bathroom remodel to accommodate mobility needs, our team ensures your home evolves with you.'
+	},
+	{
+		icon: '/icons/maintenance.svg',
+		title: 'Maintenance',
+		text: 'Regular upkeep can prevent major repairs down the line. We provide maintenance services that keep your home running smoothly, from gutter cleaning to weatherproofing.'
+	},
+	{
+		icon: '/icons/puzzle.svg',
+		title: 'Assembly',
+		text: 'Purchased new furniture or equipment and need help putting it together? Our skilled handymen are at your service to assemble your items quickly and correctly.'
+	},
+	{
+		icon: '/icons/carpentry.svg',
+		title: 'Carpentry',
+		text: 'Our carpentry services can beautify your home with custom shelving, cabinets, and more. Enhance your living space with our bespoke woodworking solutions.'
+	}
+]
+
+---
+
+<Layout title="CTX Handy Hands | Your Trusted Partner in Home Improvement and Repair">
+	<main>
+		<Hero 
+			title="CTX Handy Hands"
+			subtitle="Your Trusted Partner in Home Improvement and Repair"
+			content="<b>Welcome to CTX Handy Hands</b> – your go-to experts for making your home the best it can be. With a focus on quality, reliability, and customer satisfaction, we tackle your home to-do list so you don't have to!"
+			cta={{
+				text: 'Get a Quote',
+				link: '/contact'
+			}}
+		/>
+		<div class="strip">
+			<a href="tel:+1254-541-7515">Call 254-541-7515 Today</a>
+		</div>
+		<section class="services">
+			<h2>Services</h2>
+		{/* Flex container for top row */}
+		<div class="card__row">
+			{cards.slice(0, 3).map(({  icon, title, text }) => (
+				<a  href="tel:+1254-541-7515" class="card">
+					<div class="card-icon">
+						<img src={icon} alt={title} />
+						<h3>{title}</h3>
+						<p>{text}</p>
+						<button  class="card__button">Call Now</button>
+					</div>
+				</a>
+			))}
+		</div>
+
+		{/* Flex container for bottom row */}
+		<div class="card__row two">
+			{cards.slice(3, 5).map(({  icon, title, text }) => (
+				<a  href="tel:+1254-541-7515" class="card">
+					<div class="card-icon">
+						<img src={icon} alt={title} />
+						<h3>{title}</h3>
+						<p>{text}</p>
+						<button class="card__button">Call Now</button>
+					</div>
+				</a>
+			))}
+		</div>
+		</section>
+		<section class="about__banner">
+			<div class="left">
+				<img src="/worker.svg" alt="CTX Handy Hands" />
+			</div>
+			<div class="right">
+				<h2>About CTX Handy Hands</h2>
+				<p>CTX Handy Hands was founded on the principle of providing exceptional home maintenance and repair services to the communities of Temple, TX and the surrounding areas. Our team of skilled professionals is dedicated to delivering high-quality workmanship and customer service that exceeds expectations. We believe in honest communication, transparent pricing, and completing projects on time and within budget.</p>
+				<a href="tel:+1254-541-7515" class="about__button">Call Now</a>
+			</div>
+		</section>
+		<section class="contact__us">
+			<div class="contact__content">
+				<div class="left">
+					<h3>DON’T FEEL LIKE CALLING? Or JUST HAVE A QUESTION? Get In Touch.</h3>
+				</div>
+				<div class="right">
+					<h4>Contact Us</h4>
+					<form action="">
+						<input type="text" placeholder="Name" />
+						<input type="email" placeholder="Email" />
+						<input type="tel" placeholder="Phone" />
+						<textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+						<button class="card__button">Submit</button>
+					</form>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<p>&copy; 2023 CTX HANDY HANDS | <a href="tel:+1254-541-7515">254-541-7515</a> SERVING TEMPLE, TX AND SURROUNDING AREAS</p>
+		</footer>
+	</main>
+</Layout>
+
+<style>
+
+	footer {
+		background: #D85C22;
+		color: white;
+		text-align: center;
+		padding: 20px 0;
+	}
+
+	footer p {
+		font-family: Inter;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	footer a {
+		color: white;
+	}
+
+	.services {
+		padding: 40px 0;
+		background: linear-gradient(180deg, #FAF4EE 0%, rgba(255, 255, 255, 0.00) 100%);
+	}
+
+	.contact__us h4 {
+		color: #001A2A;
+		text-align: center;
+		font-family: Roboto;
+		font-size: 17px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+	.contact__us {
+		background: linear-gradient(180deg, #FAF4EE 0%, rgba(255, 255, 255, 0.00) 100%);
+		padding: 40px 0;
+		
+	}
+
+	.contact__content {
+		max-width: 1024px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 40px;
+		align-items: center;
+		
+	}
+
+	.contact__content .left {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.contact__content .right {
+		width: 100%;
+		max-width: 500px;
+		background-color: white;
+		padding: 40px;
+		border-radius: 10px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border: 1px solid #D85C22;
+	}
+
+	.contact__content form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.contact__content input, .contact__content textarea {
+		border: 1px solid #D85C22;
+		border-radius: 10px;
+		padding: 10px;
+	}
+
+	.contact__content .card__button {
+		border: none;
+		outline: none;
+		transition: 0.3s ease-in-out;
+	}
+
+	.contact__content .card__button:hover {
+		background: #D85C22;
+		color: white;
+		transform: scale(1.1);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	.contact__content h3{
+		color: #001A2A;
+		font-family: Roboto;
+		font-size: 39px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+
+	.card__button {
+		background-color: #D85C22;
+    display: block;
+    color: white;
+		text-decoration: none;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 100%;
+		margin: 0 auto;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+		cursor: pointer;
+		outline:none;
+		border: none;
+	}
+
+	.about__button {
+		background-color: white;
+    display: block;
+    color: #D85C22;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.about__button:hover {
+		background-color: white;
+    color:  #D85C22;
+    text-decoration: none;
+    box-shadow: 4px 4px 12px #00000040;
+    /* scale up */
+    transform: scale(1.1);
+	}
+
+	.services h2 {
+		margin: 0 auto 40px;
+		color: #0D0F11;
+		text-align: center;
+		font-family: Roboto;
+		font-size: 39px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+
+	.about__banner {
+		background: #D85C22;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		padding: 40px 0;
+		flex-direction: row;
+		gap: 18px;
+	}
+
+	.about__banner .right p {
+		color: #FFF;
+		font-family: Inter;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+	.about__banner .left {
+		width: fit-content;
+	}
+
+	.about__banner .right {
+		width: 100%;
+		max-width: 500px;
+	}
+
+	.about__banner h2 {
+		margin: 0;
+		color: #FFF;
+		font-family: Roboto;
+		font-size: 39px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+
+	.card__row {
+		display: flex;
+		justify-content: center;
+		gap: 5px;
+		margin: 0 auto 5px;
+		max-width: 1024px;
+	}
+
+	.card__row.two {
+		max-width: 768px;
+	}
+
+	.card {
+		background: #FFFFFF;
+		border: 1px solid #D85C22;
+		border-radius: 10px;
+		width: 100%;
+		max-width: 320px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		text-align: center;
+		text-decoration: none;
+		transition: 0.3s ease-in-out;
+		color: #0D0F11;
+	}
+
+	.card:hover {
+		background:  #FAF4EE;
+		transform: scale(1.1);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	.strip {
+		background: #D85C22;
+		color: white;
+		text-align: center;
+		max-height: 58px;
+		padding: 11px 0;
+	}
+
+	.strip a {
+		color: white;
+		transition: 0.5s;
+		text-decoration: none;
+		font-family: Inter;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+
+	.strip a:hover {
+		font-size: 32px;	
+	}
+</style>

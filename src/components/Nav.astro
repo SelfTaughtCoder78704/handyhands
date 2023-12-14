@@ -1,0 +1,171 @@
+---
+interface Props {
+	links: {
+    href: string;
+    text: string;
+    isActive: boolean;
+  }[];
+  lastElement?: boolean;
+  lastElementButton: {
+    href: string;
+    text: string;
+  };
+  logo: {
+    image: string;
+    href?: string;
+  }
+}
+
+const { links, lastElement, lastElementButton, logo } = Astro.props;
+const pathname = Astro.url.pathname;
+console.log('pathname ', pathname);
+links.forEach(link => {
+  if (pathname === link.href) {
+    link.isActive = true;
+  } else {
+    link.isActive = false;
+  }
+});
+---
+
+<div class="nav">
+  <div class="inner_nav">
+    {
+      logo.href ? (
+        <a class="logo nav__link" href={logo.href}>
+          <img src={logo.image} alt="Logo"  class="logo logo_image"/>
+        </a>
+      ) : (
+        <img src={logo.image} alt="Logo" class="logo logo_image" />
+      )
+    }
+    <ul class="nav__list">
+      
+  
+      {
+        links && links.map(link => {
+          return (
+            <li class="nav__item">
+              <a class={link.isActive ? 'is_active nav_link': "nav__link"} href={link.href}>{link.text}</a>
+            </li>
+          )
+        })
+      }
+      
+    </ul>
+    {
+      lastElement && (
+        <div class="button">
+          <a class="nav__link nav__link--button" href={lastElementButton.href}>{lastElementButton.text}</a>
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+
+
+  .inner_nav {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .nav {
+    padding: 10px 0;
+    background: #D85C22;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .logo_image {
+    width: 100%;
+    height: 100%;
+    max-width: 60px;
+  }
+
+  .nav__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__item {
+    margin: 0 1rem;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .nav__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .nav__link:hover {
+    color: white;
+  }
+  .is_active {
+    text-decoration: underline;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  .nav__link--button {
+    background-color: white;
+    display: block;
+    color: #D85C22;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav__link--button:hover {
+    color: #D85C22;
+    box-shadow: 4px 4px 12px #00000040;
+    transform: scale(1.1);
+  }
+
+
+
+  @media (max-width: 768px) {
+    .nav {
+      padding: 0;
+    }
+
+    .nav__list {
+      flex-direction: column;
+    }
+
+    .nav__item {
+      margin: 0.5rem 0;
+    }
+  }
+</style>
