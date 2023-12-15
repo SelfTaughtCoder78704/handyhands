@@ -4,54 +4,21 @@ import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
 import ContactForm from '../components/ContactForm.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const siteSettings = await getCollection('siteSettings');
 
 const phoneNum = '254-541-7515';
-const cards = [
-	{
-		icon: '/icons/tools.svg',
-		title: 'Home Repair and Maintenance',
-		text: 'From fixing a leaky faucet to patching up drywall, our team is equipped to handle a wide range of repair jobs around your house. We understand the importance of keeping your home in top condition. Let us help you maintain your home’s value and comfort!',
-		btnText: 'Read More',
-		link: '/home-repair-and-maintenance'
-	},
-	{
-		icon: '/icons/wheelchair.svg',
-		title: 'Safety & Mobility/Aging in Place',
-		text: 'We specialize in home modifications that enhance safety and accessibility. Whether you need grab bars, ramp installation, or a bathroom remodel to accommodate mobility needs, our team ensures your home evolves with you.',
-		btnText: 'Read More',
-		link: '/safety-and-mobility'
-	},
-	{
-		icon: '/icons/maintenance.svg',
-		title: 'Maintenance',
-		text: 'Regular upkeep can prevent major repairs down the line. We provide maintenance services that keep your home running smoothly, from gutter cleaning to weatherproofing.',
-		btnText: 'Read More',
-		link: '/maintenance'
-	},
-	{
-		icon: '/icons/puzzle.svg',
-		title: 'Assembly',
-		text: 'Purchased new furniture or equipment and need help putting it together? Our skilled handymen are at your service to assemble your items quickly and correctly.',
-		btnText: 'Read More',
-		link: '/assembly'
-	},
-	{
-		icon: '/icons/carpentry.svg',
-		title: 'Carpentry',
-		text: 'Our carpentry services can beautify your home with custom shelving, cabinets, and more. Enhance your living space with our bespoke woodworking solutions.',
-		btnText: 'Read More',
-		link: '/carpentry'
-	}
-]
+const cards = siteSettings[0].data.cards;
 
 ---
 
-<Layout title="CTX Handy Hands | Your Trusted Partner in Home Improvement and Repair">
+<Layout title={`${siteSettings[0].data.siteName} | ${siteSettings[0].data.tagLine}`}>
 	<main>
 		<Hero 
-			title="CTX Handy Hands"
-			subtitle="Your Trusted Partner in Home Improvement and Repair"
-			content="<b>Welcome to CTX Handy Hands</b> – your go-to experts for making your home the best it can be. With a focus on quality, reliability, and customer satisfaction, we tackle your home to-do list so you don't have to!"
+			title={siteSettings[0].data.siteName}
+			subtitle={siteSettings[0].data.tagLine}
+			content=`{<b>Welcome to ${siteSettings[0].data.siteName}</b> – your go-to experts for making your home the best it can be. With a focus on quality, reliability, and customer satisfaction, we tackle your home to-do list so you don't have to!`}
 			cta={{
 				text: 'Get a Quote',
 				link: '/contact'
@@ -93,8 +60,8 @@ const cards = [
 				<img src="/worker.svg" alt="CTX Handy Hands" />
 			</div>
 			<div class="right">
-				<h2>About CTX Handy Hands</h2>
-				<p>CTX Handy Hands was founded on the principle of providing exceptional home maintenance and repair services to the communities of Temple, TX and the surrounding areas. Our team of skilled professionals is dedicated to delivering high-quality workmanship and customer service that exceeds expectations. We believe in honest communication, transparent pricing, and completing projects on time and within budget.</p>
+				<h2>About {siteSettings[0].data.siteName}</h2>
+				<p>{siteSettings[0].data.siteName} was founded on the principle of providing exceptional home maintenance and repair services to the communities of Temple, TX and the surrounding areas. Our team of skilled professionals is dedicated to delivering high-quality workmanship and customer service that exceeds expectations. We believe in honest communication, transparent pricing, and completing projects on time and within budget.</p>
 				<Button 
           classes='no-hov-sec' 
           elementKind='link' 
@@ -105,7 +72,7 @@ const cards = [
 		</section>
 		<ContactForm />
 		<footer>
-			<p>&copy; 2023 CTX HANDY HANDS | <a href={"tel:+1"+phoneNum}>{phoneNum}</a> SERVING TEMPLE, TX AND SURROUNDING AREAS</p>
+			<p>&copy; 2023 ${siteSettings[0].data.siteName} | <a href={"tel:+1"+phoneNum}>{phoneNum}</a> SERVING TEMPLE, TX AND SURROUNDING AREAS</p>
 		</footer>
 	</main>
 </Layout>
