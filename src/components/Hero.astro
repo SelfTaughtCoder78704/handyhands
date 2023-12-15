@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+import {  slide } from 'astro:transitions';
 interface Props {
 	title: string;
 	subtitle: string;
@@ -12,24 +14,28 @@ interface Props {
 const { title, subtitle, content, cta } = Astro.props;
 ---
 
-<div class="hero">
+<div class="hero" transition:animate={slide({ duration: '0.6s' })}>
   <div class="hero__content">
     <h1 class="hero__title">{ title }</h1>
     <h2 class="hero__subtitle">{ subtitle }</h2>
     <p class="hero__text" set:html={ content }></p>
-    <a class="hero__cta" href={ cta.link }>{ cta.text }</a>
+    <Button 
+      classes='primary' 
+      elementKind='link' 
+      href={ cta.link }
+      text={ cta.text }
+    />
   </div>
   <img src="/herobg.png" alt="">
 </div>
 
 <style>
 .hero {
-    background: linear-gradient(180deg, #FAF4EE 0%, rgba(255, 255, 255, 0.00) 100%);
-    padding-top: 80px;
+  background: var(--page-bg-gradient);
+    padding-top: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 160px;
 }
 .hero__content {
 		max-width: 1024px;
@@ -37,7 +43,7 @@ const { title, subtitle, content, cta } = Astro.props;
     
 	}
   .hero__title {
-    color: #0D0F11;
+    color: var(--black);
     font-family: Roboto;
     font-size: 56px;
     font-style: normal;
@@ -48,7 +54,7 @@ const { title, subtitle, content, cta } = Astro.props;
   }
 
   .hero__subtitle {
-    color: #260D05;
+    color: var(--black);
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -57,7 +63,7 @@ const { title, subtitle, content, cta } = Astro.props;
   }
 
   .hero__text {
-    color: #260D05;
+    color: var(--black);
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -65,31 +71,5 @@ const { title, subtitle, content, cta } = Astro.props;
     line-height: normal;
   }
 
-  .hero__cta {
-    background-color: #D85C22;
-    display: block;
-    color: white;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    width: 200px;
-    border-radius: 0.5rem;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-  }
-
-  .hero__cta:hover {
-    background-color: white;
-    color:  #D85C22;
-    text-decoration: none;
-    box-shadow: 4px 4px 12px #00000040;
-    /* scale up */
-    transform: scale(1.1);
-  }
+ 
 </style>

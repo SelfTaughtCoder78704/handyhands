@@ -1,0 +1,105 @@
+---
+import Button from "./Button.astro";
+
+---
+
+<section class="contact__us">
+  <div class="contact__content">
+    <div class="left">
+      <h3>DON’T FEEL LIKE CALLING? Or JUST HAVE A QUESTION? Get In Touch.</h3>
+    </div>
+    <div class="right">
+      <h4>Contact Us</h4>
+      <form action="">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="tel" placeholder="Phone" />
+        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+        <Button 
+          classes='primary' 
+          elementKind='submit' 
+          text="Submit"
+        />
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact__us h4 {
+		color: var(--black);
+		text-align: center;
+		font-family: Roboto;
+		font-size: 17px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+	.contact__us {
+		background: var(--page-bg-gradient);
+		padding: 40px 0;
+		
+	}
+
+	.contact__content {
+		max-width: 1024px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 40px;
+		align-items: center;
+		
+	}
+
+	.contact__content .left {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.contact__content .right {
+		width: 100%;
+		max-width: 500px;
+		background-color: var(--secondary);
+		padding: 40px;
+		border-radius: 10px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border: 1px solid var(--primary);
+	}
+
+	.contact__content form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.contact__content input, .contact__content textarea {
+		border: 1px solid var(--primary);
+		border-radius: 10px;
+		padding: 10px;
+	}
+
+
+	.contact__content h3{
+		color: #001A2A;
+		font-family: Roboto;
+		font-size: 39px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+
+</style>
+
+<style is:global>
+  .contact__us .primary {
+    margin: 0 auto;
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  
+  }
+</style>

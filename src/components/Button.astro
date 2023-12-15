@@ -1,0 +1,161 @@
+---
+interface Props {
+	text: string;
+  href?: string;
+  target?: string;
+  rel?: string;
+  classes: 'primary' | 'secondary' | 'no-hov-prime' | 'no-hov-sec';
+  elementKind: 'button' | 'link' | 'dummy' | 'submit';
+}
+
+const { text, href, target, rel, classes, elementKind } = Astro.props;
+---
+
+{
+  elementKind === 'button' && (
+    <button
+      class={classes ? classes : 'primary'}
+      type="submit"
+    >
+      {text}
+    </button>
+  )
+  
+}
+
+{
+  elementKind === 'link' && (
+    <a
+      class={classes ? classes : 'primary'}
+      href={href}
+      target={target}
+      rel={rel}
+    >
+      {text}
+    </a>
+  )
+}
+
+{
+  elementKind === 'dummy' && (
+    <div
+      class={classes ? classes : 'primary'}
+    >
+      {text}
+    </div>
+  )
+}
+
+{
+  elementKind === 'submit' && (
+    <input
+      class={classes ? classes : 'primary'}
+      type="submit"
+      value={text}
+    />
+  )
+
+}
+
+
+<style>
+ .primary {
+    background: var(--prime-black);
+    display: block;
+    color: var(--secondary);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+ }
+
+  .primary:hover {
+    background: var(--prime-black-reverse);
+    color:  var(--secondary);
+    text-decoration: none;
+    box-shadow: 4px 4px 12px #00000040;
+    /* scale up */
+    transform: scale(1.1);
+  }
+
+  .no-hov-prime {
+    background-color: var(--primary);
+    display: block;
+    color: var(--secondary);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+  }
+
+  .no-hov-prime:hover, .no-hov-sec:hover {
+    box-shadow: 4px 4px 12px #00000040;
+    /* scale up */
+    transform: scale(1.1);
+  }
+
+  .secondary {
+    background-color: var(--secondary);
+    display: block;
+    color: var(--primary);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+  }
+
+  .secondary:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-decoration: none;
+    box-shadow: 4px 4px 12px #00000040;
+    /* scale up */
+    transform: scale(1.1);
+  }
+
+  .no-hov-sec {
+    background-color: var(--secondary);
+    display: block;
+    color: var(--primary);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+  }
+</style>
