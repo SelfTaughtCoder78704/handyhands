@@ -1,12 +1,29 @@
 {
   "siteName": "CTX Handy Hands",
   "tagLine": "Your Trusted Partner in Home Improvement and Repair",
+  "heroParagraph": "your go-to experts for making your home the best it can be. With a focus on quality, reliability, and customer satisfaction, we tackle your home to-do list so you don't have to!",
   "nav": [
-    { "href": "/", "text": "Home", "isActive": true },
-    { "href": "/about", "text": "About", "isActive": false },
-    { "href": "/blog", "text": "Blog", "isActive": false },
-    { "href": "/faq", "text": "FAQ", "isActive": false }
-],
+    {
+      "href": "/",
+      "text": "Home",
+      "isActive": true
+    },
+    {
+      "href": "/about",
+      "text": "About",
+      "isActive": false
+    },
+    {
+      "href": "/blog",
+      "text": "Blog",
+      "isActive": false
+    },
+    {
+      "href": "/faq",
+      "text": "FAQ",
+      "isActive": false
+    }
+  ],
   "cards": [
     {
       "icon": "/icons/tools.svg",
@@ -23,7 +40,7 @@
       "link": "/safety-and-mobility"
     },
     {
-      "icon":  "/icons/maintenance.svg",
+      "icon": "/icons/maintenance.svg",
       "title": "Maintenance",
       "text": "Regular upkeep can prevent major repairs down the line. We provide maintenance services that keep your home running smoothly, from gutter cleaning to weatherproofing.",
       "btnText": "Read More",

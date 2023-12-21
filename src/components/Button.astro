@@ -4,7 +4,7 @@ interface Props {
   href?: string;
   target?: string;
   rel?: string;
-  classes: 'primary' | 'secondary' | 'no-hov-prime' | 'no-hov-sec';
+  classes: 'primary' | 'secondary' | 'no-hov-prime' | 'no-hov-sec' | 'primary-card-btn';
   elementKind: 'button' | 'link' | 'dummy' | 'submit';
 }
 
@@ -157,5 +157,34 @@ const { text, href, target, rel, classes, elementKind } = Astro.props;
     text-align: center;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+  }
+
+  .primary-card-btn{
+    background: var(--prime-black);
+    display: block;
+    color: var(--secondary);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+  }
+
+  .primary-card-btn:hover {
+    background: var(--secondary);
+    color:  var(--primary);
+    text-decoration: none;
+    box-shadow: 4px 4px 12px #00000040;
+    /* scale up */
+    transform: scale(1.1);
   }
 </style>

@@ -12,6 +12,7 @@ const siteSettingsCollection = defineCollection({
       text: z.string(),
       isActive: z.boolean(),
     })),
+    heroParagraph: z.string(),
     cards: z.array(z.object({
       icon: z.string(),
       title: z.string(),
