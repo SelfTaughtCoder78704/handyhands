@@ -18,7 +18,7 @@ const { title, subtitle, content, cta } = Astro.props;
   <div class="hero__content">
     <h1 class="hero__title">{ title }</h1>
     <h2 class="hero__subtitle">{ subtitle }</h2>
-    <p class="hero__text" set:html={ content }></p>
+    <p class="hero__text" set:html={ content } />
     <Button 
       classes='primary' 
       elementKind='link' 

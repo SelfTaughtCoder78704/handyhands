@@ -18,7 +18,7 @@ const cards = siteSettings[0].data.cards;
 		<Hero 
 			title={siteSettings[0].data.siteName}
 			subtitle={siteSettings[0].data.tagLine}
-			content=`{<b>Welcome to ${siteSettings[0].data.siteName}</b> – your go-to experts for making your home the best it can be. With a focus on quality, reliability, and customer satisfaction, we tackle your home to-do list so you don't have to!`}
+			content={`<b>Welcome to ${siteSettings[0].data.siteName}</b> – ${siteSettings[0].data.heroParagraph}`}
 			cta={{
 				text: 'Get a Quote',
 				link: '/contact'

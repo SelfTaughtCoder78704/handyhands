@@ -17,7 +17,7 @@ const { icon, title, text, link, btnText} = Astro.props;
     <h3>{title}</h3>
     <p>{text}</p>
     <Button 
-      classes='primary' 
+      classes='primary-card-btn' 
       elementKind='link' 
       text={ btnText }
       href={link}
@@ -45,6 +45,7 @@ const { icon, title, text, link, btnText} = Astro.props;
 
 	.card:hover {
 		background:  var(--tertiary);
+    color: var(--black);
 		transform: scale(1.1);
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
@@ -55,5 +56,7 @@ const { icon, title, text, link, btnText} = Astro.props;
   .card .primary {
     margin: 0 auto;
   }
+
+ 
 </style>
 
