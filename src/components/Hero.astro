@@ -14,32 +14,41 @@ interface Props {
 const { title, subtitle, content, cta } = Astro.props;
 ---
 
-<div class="hero" transition:animate={slide({ duration: '0.6s' })}>
-  <div class="hero__content">
-    <h1 class="hero__title">{ title }</h1>
-    <h2 class="hero__subtitle">{ subtitle }</h2>
-    <p class="hero__text" set:html={ content } />
-    <Button 
-      classes='primary' 
-      elementKind='link' 
-      href={ cta.link }
-      text={ cta.text }
-    />
+<div class="wrapper">
+  <div class="hero" transition:animate={slide({ duration: '0.6s' })}>
+    <div class="hero__content">
+      <h1 class="hero__title">{ title }</h1>
+      <h2 class="hero__subtitle">{ subtitle }</h2>
+      <p class="hero__text" set:html={ content } />
+      <Button 
+        classes='primary' 
+        elementKind='link' 
+        href={ cta.link }
+        text={ cta.text }
+      />
+    </div>
+    <img src="/bannerMachine.svg" alt="">
   </div>
-  <img src="/herobg.png" alt="">
 </div>
 
 <style>
+  .wrapper {
+    width: 100%;
+    background: var(--page-bg-gradient);
+  }
 .hero {
-  background: var(--page-bg-gradient);
+
     padding-top: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+   max-width: 1024px;
+   margin: 0 auto;
 }
 .hero__content {
-		max-width: 1024px;
-		margin: 0 auto 0 245px;
+		max-width: 50%;
+		margin: 0 auto;
     
 	}
   .hero__title {
@@ -71,5 +80,10 @@ const { title, subtitle, content, cta } = Astro.props;
     line-height: normal;
   }
 
+
+  .hero img {
+    max-height: 500px;
+    margin: 0 auto;
+  }
  
 </style>

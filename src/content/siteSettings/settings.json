@@ -1,6 +1,6 @@
 {
-  "siteName": "CTX Handy Hands",
-  "tagLine": "Your Trusted Partner in Home Improvement and Repair",
+  "siteName": "CTX CLEAN MACHINE",
+  "tagLine": "Your Trusted Partner in getting your home in it's shiniest condition",
   "heroParagraph": "your go-to experts for making your home the best it can be. With a focus on quality, reliability, and customer satisfaction, we tackle your home to-do list so you don't have to!",
   "nav": [
     {
@@ -27,38 +27,45 @@
   "cards": [
     {
       "icon": "/icons/tools.svg",
-      "title": "Home Repair and Maintenance",
-      "text": "From fixing a leaky faucet to patching up drywall, our team is equipped to handle a wide range of repair jobs around your house. We understand the importance of keeping your home in top condition. Let us help you maintain your home’s value and comfort!",
+      "title": "Move-In/Move-Out Cleaning",
+      "text": "We specialize in move out cleaning services that leave your home spotless and ready for the next residents. We also offer move in cleaning services to ensure your new home is clean and fresh.",
       "btnText": "Read More",
       "link": "/home-repair-and-maintenance"
     },
     {
-      "icon": "/icons/wheelchair.svg",
-      "title": "Safety & Mobility/Aging in Place",
-      "text": "We specialize in home modifications that enhance safety and accessibility. Whether you need grab bars, ramp installation, or a bathroom remodel to accommodate mobility needs, our team ensures your home evolves with you.",
+      "icon": "/icons/brush.svg",
+      "title": "Deep Cleaning",
+      "text": "Our deep cleaning services are perfect for those who want to make sure their home is as clean as possible. We offer a variety of deep cleaning services, including carpet cleaning, upholstery cleaning, and more!",
       "btnText": "Read More",
-      "link": "/safety-and-mobility"
+      "link": "/home-repair-and-maintenance"
     },
     {
-      "icon": "/icons/maintenance.svg",
-      "title": "Maintenance",
-      "text": "Regular upkeep can prevent major repairs down the line. We provide maintenance services that keep your home running smoothly, from gutter cleaning to weatherproofing.",
+      "icon": "/icons/brush.svg",
+      "title": "Regular Cleaning",
+      "text": "We offer a variety of regular cleaning services, including carpet cleaning, upholstery cleaning, and more! Our team is dedicated to providing you with the best service possible so that your home stays clean and fresh.",
       "btnText": "Read More",
-      "link": "/maintenance"
+      "link": "/home-repair-and-maintenance"
     },
     {
-      "icon": "/icons/puzzle.svg",
-      "title": "Assembly",
-      "text": "Purchased new furniture or equipment and need help putting it together? Our skilled handymen are at your service to assemble your items quickly and correctly.",
+      "icon": "/icons/brush.svg",
+      "title": "Commercial Cleaning",
+      "text": "We offer a variety of commercial cleaning services, including carpet cleaning, upholstery cleaning, and more! Our team is dedicated to providing you with the best service possible so that your business stays clean and fresh.",
       "btnText": "Read More",
-      "link": "/assembly"
+      "link": "/home-repair-and-maintenance"
     },
     {
-      "icon": "/icons/carpentry.svg",
-      "title": "Carpentry",
-      "text": "Our carpentry services can beautify your home with custom shelving, cabinets, and more. Enhance your living space with our bespoke woodworking solutions.",
+      "icon": "/icons/brush.svg",
+      "title": "Post-Construction Cleaning",
+      "text": "We offer a variety of post-construction cleaning services, including carpet cleaning, upholstery cleaning, and more! Our team is dedicated to providing you with the best service possible so that your home stays clean and fresh.",
       "btnText": "Read More",
-      "link": "/carpentry"
+      "link": "/home-repair-and-maintenance"
+    },
+    {
+      "icon": "/icons/brush.svg",
+      "title": "Window Cleaning",
+      "text": "We offer a variety of window cleaning services, including carpet cleaning, upholstery cleaning, and more! Our team is dedicated to providing you with the best service possible so that your home stays clean and fresh.",
+      "btnText": "Read More",
+      "link": "/home-repair-and-maintenance"
     }
   ],
   "footer": {

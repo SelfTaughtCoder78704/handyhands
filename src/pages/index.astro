@@ -43,8 +43,8 @@ const cards = siteSettings[0].data.cards;
 		</div>
 
 		{/* Flex container for bottom row */}
-		<div class="card__row two">
-			{cards.slice(3, 5).map(({  icon, title, text, link, btnText }) => (
+		<div class="card__row one">
+			{cards.slice(3, 6).map(({  icon, title, text, link, btnText }) => (
 				<Card
 					icon={icon}
 					title={title}
@@ -57,10 +57,10 @@ const cards = siteSettings[0].data.cards;
 		</section>
 		<section class="about__banner">
 			<div class="left">
-				<img src="/worker.svg" alt="CTX Handy Hands" />
+				<img src="/heroImage.svg" alt="CTX Handy Hands" />
 			</div>
 			<div class="right">
-				<h2>About {siteSettings[0].data.siteName}</h2>
+				<h2>About<br/> {siteSettings[0].data.siteName}</h2>
 				<p>{siteSettings[0].data.siteName} was founded on the principle of providing exceptional home maintenance and repair services to the communities of Temple, TX and the surrounding areas. Our team of skilled professionals is dedicated to delivering high-quality workmanship and customer service that exceeds expectations. We believe in honest communication, transparent pricing, and completing projects on time and within budget.</p>
 				<Button 
           classes='no-hov-sec' 
@@ -124,6 +124,10 @@ const cards = siteSettings[0].data.cards;
 		padding: 40px 0;
 		flex-direction: row;
 		gap: 18px;
+	}
+
+	.about__banner img {
+		max-height: 300px;
 	}
 
 	.about__banner .right p {
